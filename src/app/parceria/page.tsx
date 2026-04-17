@@ -64,41 +64,31 @@ export default function ParceriaPage() {
       <main>
         {/* Hero */}
         <section className="relative min-h-[85vh] flex items-center pt-32 pb-20 overflow-hidden bg-[var(--primary)] text-white">
-          <div className="absolute inset-0 opacity-15">
-            <Image
-              src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=2000&q=80"
-              alt=""
-              fill
-              priority
-              className="object-cover"
-              aria-hidden
-            />
-          </div>
           <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)] via-[var(--primary)] to-[var(--primary-dark)]" />
 
-          <div className="container-custom relative grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7">
+          <div className="container-custom relative grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="lg:col-span-7 text-center lg:text-left order-2 lg:order-1">
               <FadeIn>
-                <SectionLabel className="text-[var(--accent-light)]">
+                <SectionLabel className="text-[var(--accent-light)] justify-center lg:justify-start">
                   <span className="!bg-[var(--accent-light)]" />
                   Para gestores de clínica
                 </SectionLabel>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h1 className="mt-6 font-display text-[clamp(2.5rem,6vw,5rem)] leading-[1.05]">
+                <h1 className="mt-6 font-display text-[clamp(2.25rem,5.5vw,5rem)] leading-[1.08]">
                   Uma parceira que eleva{" "}
                   <span className="italic text-[var(--accent-light)]">a ciência</span> da sua clínica
                 </h1>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="mt-8 text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed">
+                <p className="mt-8 text-white/80 text-base md:text-lg lg:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                   Amplie seu portfólio de procedimentos, reduza riscos operatórios e entregue uma
                   experiência sem dor ao seu paciente, com uma anestesiologista dedicada ao modelo
                   ambulatorial.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
-                <div className="mt-10 flex flex-wrap gap-4">
+                <div className="mt-10 flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
                   <Link href="#contato-parceria" className="btn-accent">
                     Quero ser parceiro
                     <ArrowRight className="w-4 h-4" />
@@ -114,14 +104,15 @@ export default function ParceriaPage() {
                 </div>
               </FadeIn>
             </div>
-            <FadeIn direction="left" className="lg:col-span-5">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+            <FadeIn direction="left" className="lg:col-span-5 order-1 lg:order-2 mx-auto w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none">
+              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1584516150909-c43483ee7932?w=1200&q=80"
-                  alt="Procedimento em clínica moderna"
+                  src="/images/parceria/parceria-hero.jpg"
+                  alt="Dra. Carla Costa operando monitor anestésico"
                   fill
+                  priority
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  sizes="(max-width: 1024px) 420px, 40vw"
                 />
               </div>
             </FadeIn>
@@ -180,10 +171,10 @@ export default function ParceriaPage() {
                 </ul>
               </FadeIn>
               <FadeIn direction="left">
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1559757175-7cb036bd4d31?w=1200&q=80"
-                    alt="Equipe médica"
+                    src="/images/parceria/parceria-touca.jpg"
+                    alt="Dra. Carla Costa — Você tem o direito de escolher seu anestesista"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
