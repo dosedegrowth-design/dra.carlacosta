@@ -46,7 +46,7 @@ export function ContactSection() {
           <FadeIn delay={0.1}>
             <SectionTitle className="mt-4">
               Vamos construir uma{" "}
-              <span className="italic text-[var(--accent)]">parceria</span>
+              <span className="italic text-[var(--accent-dark)]">parceria</span>
             </SectionTitle>
           </FadeIn>
           <FadeIn delay={0.2}>

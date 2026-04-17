@@ -13,7 +13,7 @@ export function HowItWorksSection() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <SectionTitle className="mt-4">
-              Uma parceria em <span className="italic text-[var(--accent)]">4 etapas</span> simples
+              Uma parceria em <span className="italic text-[var(--accent-dark)]">4 etapas</span> simples
             </SectionTitle>
           </FadeIn>
           <FadeIn delay={0.2}>

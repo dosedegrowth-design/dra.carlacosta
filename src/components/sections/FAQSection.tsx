@@ -14,7 +14,7 @@ export function FAQSection() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <SectionTitle className="mt-4">
-              Perguntas <span className="italic text-[var(--accent)]">frequentes</span>
+              Perguntas <span className="italic text-[var(--accent-dark)]">frequentes</span>
             </SectionTitle>
           </FadeIn>
           <FadeIn delay={0.2}>

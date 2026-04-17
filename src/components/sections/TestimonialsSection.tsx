@@ -22,7 +22,7 @@ export function TestimonialsSection() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <SectionTitle className="mt-4">
-              O que dizem as <span className="italic text-[var(--accent)]">clínicas parceiras</span>{" "}
+              O que dizem as <span className="italic text-[var(--accent-dark)]">clínicas parceiras</span>{" "}
               e pacientes
             </SectionTitle>
           </FadeIn>

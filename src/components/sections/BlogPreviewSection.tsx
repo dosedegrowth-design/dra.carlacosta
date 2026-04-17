@@ -25,7 +25,7 @@ export function BlogPreviewSection() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <SectionTitle className="mt-4">
-                Informação que <span className="italic text-[var(--accent)]">cura</span>
+                Informação que <span className="italic text-[var(--accent-dark)]">cura</span>
               </SectionTitle>
             </FadeIn>
           </div>

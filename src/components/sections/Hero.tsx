@@ -74,7 +74,7 @@ export function Hero() {
               {[1, 2, 3].map((i) => (
                 <div
                   key={i}
-                  className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-[var(--accent-light)] to-[var(--accent)]"
+                  className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-[var(--sage)] to-[var(--primary)]"
                 />
               ))}
             </div>
@@ -111,7 +111,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute -top-6 -right-6 bg-[var(--accent)] text-white rounded-2xl p-5 shadow-2xl max-w-[200px]"
+            className="absolute -top-6 -right-6 bg-[var(--accent-dark)] text-white rounded-2xl p-5 shadow-2xl max-w-[200px]"
           >
             <p className="font-display text-2xl">Santa Casa SP</p>
             <p className="text-sm opacity-90 mt-1">Especialização em Medicina da Dor</p>

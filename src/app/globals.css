@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #0a2540;
-  --primary-dark: #061a30;
-  --primary-light: #1a3a5c;
-  --accent: #c9a96e;
-  --accent-light: #e3c89f;
-  --accent-dark: #a68849;
-  --rose: #e8b4b8;
-  --bg: #fafaf7;
-  --bg-soft: #f2f0ea;
-  --text: #0d1117;
-  --text-muted: #6b7280;
-  --border: #e6e4dc;
+  /* Paleta oficial Brand Board Merci — Dra. Carla Costa */
+  --primary: #3d4a3a;          /* Verde-oliva escuro (principal) */
+  --primary-dark: #2c3629;     /* Verde profundo */
+  --primary-light: #5a6b54;    /* Verde médio */
+  --accent: #8b8579;           /* Taupe/marrom suave */
+  --accent-light: #b8b0a0;     /* Taupe claro */
+  --accent-dark: #6b5f4f;      /* Marrom terroso */
+  --sage: #7a8a70;             /* Verde sálvia suave */
+  --bg: #f5f1e8;               /* Off-white bege (fundo principal) */
+  --bg-soft: #e8e2d5;          /* Bege médio (seções alternadas) */
+  --bg-cream: #faf7ef;         /* Cream mais claro */
+  --text: #2c3629;             /* Verde escuro como texto */
+  --text-muted: #8b8579;       /* Taupe como texto secundário */
+  --border: #d9d2c4;           /* Bege/taupe sutil */
   --white: #ffffff;
-  --font-display: var(--font-playfair), Georgia, serif;
-  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), "Lovelace", Georgia, serif;
+  --font-body: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
@@ -25,9 +27,10 @@
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
   --color-accent-dark: var(--accent-dark);
-  --color-rose: var(--rose);
+  --color-sage: var(--sage);
   --color-bg: var(--bg);
   --color-bg-soft: var(--bg-soft);
+  --color-bg-cream: var(--bg-cream);
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
   --color-border: var(--border);
@@ -50,12 +53,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+  font-weight: 400;
+}
+
+/* Títulos grandes com weight mais leve, como Lovelace */
+h1, h2 {
+  font-weight: 400;
+}
+
+h3, h4 {
+  font-weight: 500;
 }
 
 @layer utilities {
@@ -88,18 +103,20 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.5rem;
     padding: 0.95rem 1.75rem;
     background: var(--primary);
-    color: var(--white);
+    color: var(--bg-cream);
     border-radius: 9999px;
     font-weight: 500;
-    letter-spacing: 0.01em;
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    letter-spacing: 0.04em;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     border: 1px solid var(--primary);
   }
 
   .btn-primary:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px rgba(10, 37, 64, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(61, 74, 58, 0.4);
   }
 
   .btn-secondary {
@@ -112,13 +129,16 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary);
     border-radius: 9999px;
     font-weight: 500;
+    letter-spacing: 0.04em;
+    font-size: 0.875rem;
+    text-transform: uppercase;
     border: 1px solid var(--primary);
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .btn-secondary:hover {
     background: var(--primary);
-    color: var(--white);
+    color: var(--bg-cream);
     transform: translateY(-2px);
   }
 
@@ -128,24 +148,28 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     gap: 0.5rem;
     padding: 0.95rem 1.75rem;
-    background: var(--accent);
-    color: var(--white);
+    background: var(--accent-dark);
+    color: var(--bg-cream);
     border-radius: 9999px;
     font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-    border: 1px solid var(--accent);
+    letter-spacing: 0.04em;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    border: 1px solid var(--accent-dark);
   }
 
   .btn-accent:hover {
-    background: var(--accent-dark);
+    background: var(--accent);
+    border-color: var(--accent);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px rgba(201, 169, 110, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(139, 133, 121, 0.5);
   }
 
   .section-label {
     display: inline-block;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--accent-dark);
     font-weight: 500;

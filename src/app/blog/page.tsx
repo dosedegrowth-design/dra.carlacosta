@@ -45,7 +45,7 @@ export default function BlogIndex() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <SectionTitle className="mt-4 max-w-3xl">
-                Conhecimento que <span className="italic text-[var(--accent)]">acolhe</span>
+                Conhecimento que <span className="italic text-[var(--accent-dark)]">acolhe</span>
               </SectionTitle>
             </FadeIn>
           </div>

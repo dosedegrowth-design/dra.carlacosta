@@ -37,7 +37,7 @@ export function AboutSection() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <SectionTitle className="mt-4">
-              Ciência, cuidado e <span className="italic text-[var(--accent)]">humanização</span>{" "}
+              Ciência, cuidado e <span className="italic text-[var(--accent-dark)]">humanização</span>{" "}
               em cada procedimento
             </SectionTitle>
           </FadeIn>

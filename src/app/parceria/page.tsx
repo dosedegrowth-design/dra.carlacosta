@@ -112,7 +112,7 @@ export default function ParceriaPage() {
               <FadeIn delay={0.1}>
                 <SectionTitle className="mt-4">
                   Mais segurança. Mais previsibilidade.{" "}
-                  <span className="italic text-[var(--accent)]">Mais resultado.</span>
+                  <span className="italic text-[var(--accent-dark)]">Mais resultado.</span>
                 </SectionTitle>
               </FadeIn>
             </div>
@@ -178,7 +178,7 @@ export default function ParceriaPage() {
               <FadeIn delay={0.1}>
                 <SectionTitle className="mt-4">
                   Do primeiro contato ao{" "}
-                  <span className="italic text-[var(--accent)]">procedimento</span>
+                  <span className="italic text-[var(--accent-dark)]">procedimento</span>
                 </SectionTitle>
               </FadeIn>
             </div>

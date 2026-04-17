@@ -19,7 +19,7 @@ export function ServicesSection() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <SectionTitle className="mt-4">
-              Um <span className="italic text-[var(--accent)]">leque completo</span> de cuidado
+              Um <span className="italic text-[var(--accent-dark)]">leque completo</span> de cuidado
               anestésico ambulatorial
             </SectionTitle>
           </FadeIn>

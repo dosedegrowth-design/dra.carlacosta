@@ -14,7 +14,7 @@ export function MitosSection() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <SectionTitle className="mt-4">
-              Separe o mito da <span className="italic text-[var(--accent)]">verdade</span> sobre
+              Separe o mito da <span className="italic text-[var(--accent-dark)]">verdade</span> sobre
               anestesia
             </SectionTitle>
           </FadeIn>
