@@ -15,7 +15,7 @@ import { B2B_BENEFITS, HOW_IT_WORKS, SITE, STATS, TESTIMONIALS } from "@/lib/con
 type IconName = keyof typeof Icons;
 
 export const metadata: Metadata = {
-  title: "Parceria com Clínicas — Anestesiologia Ambulatorial",
+  title: "Parceria com Clínicas | Anestesiologia Ambulatorial",
   description:
     "Anestesiologista parceira para clínicas de dermatologia, odontologia, cirurgia plástica e estética. Sedação segura, previsibilidade clínica e pacientes mais satisfeitos.",
 };
@@ -67,7 +67,7 @@ export default function ParceriaPage() {
               <FadeIn delay={0.2}>
                 <p className="mt-8 text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed">
                   Amplie seu portfólio de procedimentos, reduza riscos operatórios e entregue uma
-                  experiência sem dor ao seu paciente — com uma anestesiologista dedicada ao modelo
+                  experiência sem dor ao seu paciente, com uma anestesiologista dedicada ao modelo
                   ambulatorial.
                 </p>
               </FadeIn>

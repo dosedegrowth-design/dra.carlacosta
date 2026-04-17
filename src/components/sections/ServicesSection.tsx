@@ -26,7 +26,7 @@ export function ServicesSection() {
           <FadeIn delay={0.2}>
             <p className="mt-6 text-[var(--text-muted)] text-lg leading-relaxed">
               Procedimentos com sedação segura, avaliação pré-anestésica rigorosa e acompanhamento
-              humanizado — sob medida para a rotina da sua clínica.
+              humanizado, sob medida para a rotina da sua clínica.
             </p>
           </FadeIn>
         </div>

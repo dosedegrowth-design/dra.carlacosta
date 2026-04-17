@@ -2,7 +2,7 @@ import type { Service, Mito, Testimonial, FAQ, BlogPost, Pilar } from "@/types";
 
 export const SITE = {
   name: "Dra. Carla Costa",
-  title: "Dra. Carla Costa — Anestesiologia Ambulatorial para Clínicas",
+  title: "Dra. Carla Costa | Anestesiologia Ambulatorial para Clínicas",
   description:
     "Anestesiologia e Medicina da Dor com foco em clínicas dermatológicas, odontológicas, plásticas e estéticas. Segurança, conforto e humanização em cada procedimento.",
   url: "https://dracarlacosta.com.br",
@@ -10,7 +10,7 @@ export const SITE = {
   phone: "+55 11 00000-0000",
   whatsapp: "5511000000000",
   email: "contato@dracarlacosta.com.br",
-  address: "São Paulo — SP",
+  address: "São Paulo, SP",
   instagram: "https://instagram.com/dracarlacostac",
   linkedin: "https://linkedin.com/in/dracarlacosta",
   ogImage: "/images/og-image.jpg",
@@ -95,7 +95,7 @@ export const SERVICES: Service[] = [
     title: "Sedação Consciente",
     short: "Para pacientes com ansiedade em procedimentos estéticos e dentários.",
     description:
-      "Técnica que mantém o paciente relaxado e cooperativo, sem perda completa da consciência — ideal para procedimentos ambulatoriais de menor porte.",
+      "Técnica que mantém o paciente relaxado e cooperativo, sem perda completa da consciência. Ideal para procedimentos ambulatoriais de menor porte.",
     icon: "Moon",
     image: "/images/services/servico-sedacao.jpg",
   },
@@ -113,7 +113,7 @@ export const SERVICES: Service[] = [
     title: "Avaliação Pré-anestésica",
     short: "Triagem completa antes de qualquer procedimento.",
     description:
-      "Anamnese detalhada, análise de exames e planejamento anestésico personalizado — reduzindo riscos e complicações intra e pós-operatórias.",
+      "Anamnese detalhada, análise de exames e planejamento anestésico personalizado, reduzindo riscos e complicações intra e pós-operatórias.",
     icon: "ClipboardCheck",
     image: "/images/services/servico-pre-anestesica.jpg",
   },
@@ -204,12 +204,12 @@ export const MITOS: Mito[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     name: "Dra. Marina Lopes",
-    role: "Dermatologista — Clínica Parceira",
+    role: "Dermatologista, Clínica Parceira",
     text: "A parceria com a Dra. Carla mudou o patamar da minha clínica. Pacientes saem tranquilos, sem dor, e voltam sempre.",
   },
   {
     name: "Dr. Roberto Alves",
-    role: "Cirurgião-dentista — Implantodontia",
+    role: "Cirurgião-dentista, Implantodontia",
     text: "Profissional extremamente técnica e acolhedora. A avaliação pré-anestésica é um diferencial real para casos complexos.",
   },
   {
@@ -233,7 +233,7 @@ export const FAQS: FAQ[] = [
   {
     question: "Quais especialidades atende?",
     answer:
-      "Dermatologia, odontologia, cirurgia plástica, bucomaxilofacial, estética avançada e medicina da dor — todos em ambiente ambulatorial ou cirúrgico.",
+      "Dermatologia, odontologia, cirurgia plástica, bucomaxilofacial, estética avançada e medicina da dor. Todos em ambiente ambulatorial ou cirúrgico.",
   },
   {
     question: "É possível agendar um procedimento individual?",
@@ -282,7 +282,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "mitos-sobre-anestesia",
     title: "5 mitos sobre anestesia que você precisa parar de acreditar",
     excerpt:
-      "Separando ciência de achismo — um guia direto para quem vai passar por um procedimento.",
+      "Separando ciência de achismo: um guia direto para quem vai passar por um procedimento.",
     date: "2024-12-20",
     readTime: "6 min",
     image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1200&q=80",

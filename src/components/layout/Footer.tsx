@@ -44,7 +44,7 @@ export function Footer() {
               <h3 className="font-display text-3xl">{SITE.name}</h3>
             </div>
             <p className="text-white/70 max-w-md leading-relaxed">
-              Anestesiologia e Medicina da Dor com cuidado, segurança e humanização — para clínicas
+              Anestesiologia e Medicina da Dor com cuidado, segurança e humanização. Para clínicas
               parceiras e pacientes.
             </p>
             <p className="mt-6 text-sm text-white/50">{SITE.crm}</p>

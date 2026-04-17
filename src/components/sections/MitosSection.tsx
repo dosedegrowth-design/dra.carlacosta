@@ -20,7 +20,7 @@ export function MitosSection() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mt-6 text-[var(--text-muted)] text-lg leading-relaxed">
-              Desmistificamos as dúvidas mais comuns para que você — paciente ou profissional — tome
+              Desmistificamos as dúvidas mais comuns para que você, paciente ou profissional, tome
               decisões seguras e informadas.
             </p>
           </FadeIn>

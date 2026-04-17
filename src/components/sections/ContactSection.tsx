@@ -89,7 +89,7 @@ export function ContactSection() {
               </span>
               <div>
                 <p className="text-xs text-[var(--text-muted)]">Atendimento</p>
-                <p className="font-medium text-[var(--primary)]">Seg — Sex, 9h às 19h</p>
+                <p className="font-medium text-[var(--primary)]">Seg a Sex, 9h às 19h</p>
               </div>
             </div>
           </FadeIn>

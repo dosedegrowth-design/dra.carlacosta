@@ -112,7 +112,7 @@ export default async function BlogPostPage(
                   </p>
                   <p>
                     Neste artigo, vamos explorar como essa transição pode transformar a experiência
-                    do paciente e elevar o patamar clínico da sua prática — sempre com base em
+                    do paciente e elevar o patamar clínico da sua prática, sempre com base em
                     evidências científicas e protocolos rigorosos.
                   </p>
                   <h2 className="font-display text-3xl text-[var(--primary)] mt-12">

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Building2, User } from "lucide-react";
 import { SITE } from "@/lib/constants";
-import { TextReveal } from "@/components/animation/TextReveal";
 
 export function Hero() {
   const whatsappHref = `https://wa.me/${SITE.whatsapp}`;
@@ -30,20 +29,30 @@ export function Hero() {
             Anestesiologia • Medicina da Dor
           </motion.span>
 
-          <h1 className="mt-6 font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.02] text-[var(--primary)]">
-            <TextReveal text="Cuidado, segurança e" />
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-6 font-display text-[clamp(2.75rem,5.5vw,5rem)] leading-[1.05] text-[var(--primary)]"
+          >
+            Anestesia que <span className="italic text-[var(--accent-dark)]">acolhe</span>,
             <br />
-            <TextReveal text="conforto" highlight="conforto" delay={0.4} />
-            <span className="block text-[var(--text-muted)] text-[clamp(1.1rem,2vw,1.5rem)] font-body mt-6 max-w-xl leading-relaxed">
-              Anestesia ambulatorial para clínicas dermatológicas, odontológicas, plásticas e
-              estéticas — com a tranquilidade que seu paciente merece.
-            </span>
-          </h1>
+            ciência que <span className="italic text-[var(--accent-dark)]">cuida</span>.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-8 text-[var(--text-muted)] text-[clamp(1.05rem,1.5vw,1.25rem)] font-body max-w-xl leading-relaxed"
+          >
+            Anestesia ambulatorial para clínicas de dermatologia, odontologia, cirurgia plástica e estética, com a tranquilidade que seu paciente merece.
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.4 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
             className="mt-10 flex flex-wrap gap-4"
           >
             <Link href="/parceria" className="btn-primary">
@@ -60,7 +69,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
             className="mt-12 flex items-center gap-6 text-sm text-[var(--text-muted)]"
           >
             <div className="flex -space-x-2">
@@ -87,7 +96,7 @@ export function Hero() {
           <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
             <Image
               src="/images/hero/carla-hero.jpg"
-              alt="Dra. Carla Costa — Anestesiologista"
+              alt="Dra. Carla Costa, Anestesiologista"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 40vw"
@@ -131,7 +140,7 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2 }}
+        transition={{ duration: 1, delay: 1.4 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--text-muted)] text-xs tracking-[0.3em] uppercase"
       >
         <motion.div

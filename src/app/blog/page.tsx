@@ -11,7 +11,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { BLOG_POSTS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Blog — Conteúdo sobre Anestesia",
+  title: "Blog | Conteúdo sobre Anestesia",
   description:
     "Artigos e conteúdos sobre anestesia ambulatorial, sedação consciente e medicina da dor para clínicas e pacientes.",
 };
