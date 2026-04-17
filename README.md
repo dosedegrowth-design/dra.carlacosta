@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dra. Carla Costa — Site Institucional
 
-## Getting Started
+Landing premium para a Dra. Carla Costa (anestesiologia e medicina da dor), com foco híbrido **B2B** (clínicas parceiras) + **B2C** (pacientes).
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS 4 (`@tailwindcss/postcss`)
+- Framer Motion 12 (animações on-scroll + micro-interações)
+- Lucide React (ícones)
+- Deploy: Vercel
+
+## Como rodar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build de produção
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Estrutura
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                 # App Router (Next.js)
+│   ├── page.tsx         # Home (12 seções)
+│   ├── parceria/        # Landing B2B dedicada
+│   ├── servicos/[slug]/ # Páginas individuais por serviço
+│   ├── blog/            # Listagem + posts individuais
+│   ├── sitemap.ts
+│   └── robots.ts
+├── components/
+│   ├── layout/          # Header, Footer
+│   ├── sections/        # 12 seções da home + B2B
+│   ├── animation/       # FadeIn, TextReveal, AnimateOnScroll
+│   └── ui/              # Button, Accordion, SectionTitle, WhatsAppFloat
+├── hooks/useInView.ts   # IntersectionObserver SSR-safe
+├── lib/
+│   ├── constants.ts     # Conteúdo (serviços, FAQ, depoimentos, posts)
+│   ├── structured-data.ts # JSON-LD schemas
+│   └── utils.ts         # cn()
+└── types/               # TypeScript types
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Conteúdo editável
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Todo o conteúdo textual está em `src/lib/constants.ts`:
+- `SITE` — nome, CRM, contato, redes sociais
+- `SERVICES` — 6 áreas de atuação
+- `B2B_BENEFITS` — 4 benefícios para clínicas
+- `HOW_IT_WORKS` — 4 etapas da parceria
+- `PILARES` — 4 pilares (Segurança, Acolhimento, Conforto, Humanização)
+- `MITOS` — Mitos e Verdades
+- `TESTIMONIALS` — depoimentos
+- `FAQS` — perguntas frequentes
+- `BLOG_POSTS` — posts do blog
+- `STATS` — números em destaque
 
-## Deploy on Vercel
+## SEO
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `generateMetadata` em cada página
+- `sitemap.ts` dinâmico
+- `robots.ts`
+- JSON-LD: `Physician`, `FAQPage`, `WebSite`
+- Open Graph: imagem em `/public/images/og-image.jpg` (adicionar)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Placeholders
+
+Imagens atualmente vêm do Unsplash (configuradas em `next.config.ts`). Substitua pelas fotos oficiais da Dra. quando disponíveis.
+
+## Deploy
+
+O projeto está pronto para deploy na Vercel:
+
+1. Push para GitHub
+2. Import na Vercel
+3. Configurar domínio `dracarlacosta.com.br`
+
+## Próximos passos
+
+- [ ] Substituir imagens Unsplash pelas fotos oficiais
+- [ ] Atualizar CRM, WhatsApp e e-mail em `src/lib/constants.ts`
+- [ ] Adicionar Open Graph image em `/public/images/og-image.jpg`
+- [ ] Integrar formulário de contato com backend (Supabase ou email)
+- [ ] Expandir blog com artigos reais
