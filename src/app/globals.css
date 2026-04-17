@@ -102,44 +102,51 @@ h3, h4 {
     }
   }
 
-  .btn-primary {
+  .btn-primary,
+  .btn-secondary,
+  .btn-accent {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.95rem 1.75rem;
-    background: var(--primary);
-    color: var(--bg-cream);
+    gap: 0.625rem;
+    padding: 1.05rem 2.25rem;
     border-radius: 9999px;
     font-weight: 500;
-    letter-spacing: 0.04em;
-    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
     text-transform: uppercase;
     transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    border: 1px solid var(--primary);
+    border: 1px solid transparent;
+    line-height: 1;
+    min-height: 52px;
+  }
+
+  @media (min-width: 768px) {
+    .btn-primary,
+    .btn-secondary,
+    .btn-accent {
+      padding: 1.15rem 2.5rem;
+      font-size: 0.825rem;
+      min-height: 56px;
+    }
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: var(--bg-cream);
+    border-color: var(--primary);
   }
 
   .btn-primary:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px rgba(61, 74, 58, 0.4);
+    box-shadow: 0 12px 32px -10px rgba(61, 74, 58, 0.5);
   }
 
   .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.95rem 1.75rem;
     background: transparent;
     color: var(--primary);
-    border-radius: 9999px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    border: 1px solid var(--primary);
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    border-color: var(--primary);
   }
 
   .btn-secondary:hover {
@@ -149,27 +156,23 @@ h3, h4 {
   }
 
   .btn-accent {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.95rem 1.75rem;
     background: var(--accent-dark);
     color: var(--bg-cream);
-    border-radius: 9999px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    border: 1px solid var(--accent-dark);
+    border-color: var(--accent-dark);
   }
 
   .btn-accent:hover {
     background: var(--accent);
     border-color: var(--accent);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px rgba(139, 133, 121, 0.5);
+    box-shadow: 0 12px 32px -10px rgba(139, 133, 121, 0.5);
+  }
+
+  /* Botão compacto (Header "Agendar") */
+  .btn-compact {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.75rem;
+    min-height: 42px;
   }
 
   .section-label {

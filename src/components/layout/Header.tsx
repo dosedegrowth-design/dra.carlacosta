@@ -34,23 +34,28 @@ export function Header() {
           "fixed top-0 inset-x-0 z-40 transition-all duration-500",
           scrolled
             ? "bg-white/90 backdrop-blur-md border-b border-[var(--border)] py-3"
-            : "bg-transparent py-5"
+            : "bg-transparent py-4 md:py-6"
         )}
       >
         <div className="container-custom flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 md:gap-4 group">
             <Image
               src="/images/logo/logo-carla.png"
               alt="Dra. Carla Costa"
-              width={48}
-              height={48}
+              width={80}
+              height={80}
               className={cn(
                 "transition-all duration-500",
-                scrolled ? "w-10 h-10" : "w-12 h-12"
+                scrolled ? "w-12 h-12 md:w-14 md:h-14" : "w-14 h-14 md:w-16 md:h-16 lg:w-[72px] lg:h-[72px]"
               )}
               priority
             />
-            <span className="font-display text-base sm:text-lg md:text-xl tracking-tight text-[var(--primary)]">
+            <span className={cn(
+              "font-display tracking-tight text-[var(--primary)] transition-all duration-500 leading-none",
+              scrolled
+                ? "text-lg md:text-xl"
+                : "text-xl md:text-2xl lg:text-[1.65rem]"
+            )}>
               Dra. Carla Costa
             </span>
           </Link>
@@ -72,7 +77,7 @@ export function Header() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex btn-accent text-sm"
+              className="hidden md:inline-flex btn-accent btn-compact"
             >
               Agendar
             </a>
