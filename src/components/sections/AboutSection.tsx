@@ -17,7 +17,7 @@ export function AboutSection() {
 
           <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="/images/about/carla-sobre.jpg"
+              src="/images/about/carla-sobre-v2.jpg"
               alt="Dra. Carla Costa"
               fill
               className="object-cover"
