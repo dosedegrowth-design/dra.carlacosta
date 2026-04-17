@@ -10,8 +10,8 @@ type IconName = keyof typeof Icons;
 export function AboutSection() {
   return (
     <section id="sobre" className="section bg-[var(--bg)]">
-      <div className="container-custom grid lg:grid-cols-12 gap-16 items-start">
-        <FadeIn direction="right" className="lg:col-span-5 relative">
+      <div className="container-custom grid lg:grid-cols-12 gap-10 md:gap-16 items-start">
+        <FadeIn direction="right" className="lg:col-span-5 relative mx-auto w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none">
           {/* Moldura decorativa sutil */}
           <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[var(--sage)]/15 to-[var(--accent-light)]/30 -z-10" />
 
@@ -21,22 +21,22 @@ export function AboutSection() {
               alt="Dra. Carla Costa"
               fill
               className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              sizes="(max-width: 640px) 340px, (max-width: 1024px) 420px, 40vw"
             />
           </div>
-          <div className="absolute -bottom-8 -right-8 bg-[var(--primary)] text-[var(--bg-cream)] rounded-2xl p-6 max-w-[260px] hidden md:block shadow-xl">
-            <p className="font-display text-lg leading-tight italic">
+          <div className="absolute -bottom-6 -right-4 md:-bottom-8 md:-right-8 bg-[var(--primary)] text-[var(--bg-cream)] rounded-2xl p-4 md:p-6 max-w-[220px] md:max-w-[260px] shadow-xl">
+            <p className="font-display text-sm md:text-lg leading-tight italic">
               &ldquo;Cada paciente merece ser tratado com a mesma dedicação de um familiar.&rdquo;
             </p>
-            <p className="mt-3 text-xs text-[var(--accent-light)] uppercase tracking-[0.25em]">
+            <p className="mt-2 md:mt-3 text-[10px] md:text-xs text-[var(--accent-light)] uppercase tracking-[0.25em]">
               Dra. Carla Costa
             </p>
           </div>
         </FadeIn>
 
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-7 text-center lg:text-left">
           <FadeIn>
-            <SectionLabel>Sobre a Dra. Carla</SectionLabel>
+            <SectionLabel className="justify-center lg:justify-start">Sobre a Dra. Carla</SectionLabel>
           </FadeIn>
           <FadeIn delay={0.1}>
             <SectionTitle className="mt-4">
@@ -45,7 +45,7 @@ export function AboutSection() {
             </SectionTitle>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="mt-6 text-[var(--text-muted)] leading-relaxed text-lg">
+            <p className="mt-6 text-[var(--text-muted)] leading-relaxed text-base md:text-lg">
               Médica anestesiologista com formação pela Universidade Potiguar, residência em
               Anestesiologia pela Unitau e especialização em Medicina da Dor pela Santa Casa de São
               Paulo. Atua em anestesia ambulatorial e em centro cirúrgico, com foco em clínicas
@@ -54,7 +54,7 @@ export function AboutSection() {
             </p>
           </FadeIn>
 
-          <div className="mt-10 grid sm:grid-cols-2 gap-6">
+          <div className="mt-10 grid sm:grid-cols-2 gap-6 text-left">
             {PILARES.map((p, idx) => {
               const Icon = p.icon ? (Icons[p.icon as IconName] as React.ComponentType<{ className?: string; strokeWidth?: number }>) : null;
               return (
@@ -67,7 +67,7 @@ export function AboutSection() {
                     ) : null}
                   </span>
                   <div>
-                    <h3 className="font-display text-xl text-[var(--primary)]">{p.title}</h3>
+                    <h3 className="font-display text-lg md:text-xl text-[var(--primary)]">{p.title}</h3>
                     <p className="mt-1 text-sm text-[var(--text-muted)] leading-relaxed">
                       {p.description}
                     </p>
@@ -77,7 +77,7 @@ export function AboutSection() {
             })}
           </div>
 
-          <FadeIn delay={0.3} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-[var(--border)]">
+          <FadeIn delay={0.3} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-[var(--border)] text-center lg:text-left">
             {STATS.map((s) => (
               <div key={s.label}>
                 <p className="font-display text-3xl md:text-4xl text-[var(--primary)]">{s.value}</p>

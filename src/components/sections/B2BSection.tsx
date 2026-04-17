@@ -24,10 +24,10 @@ export function B2BSection() {
       </div>
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)] via-[var(--primary)] to-[var(--primary-dark)]" />
 
-      <div className="container-custom relative grid lg:grid-cols-12 gap-16 items-center">
-        <div className="lg:col-span-6">
+      <div className="container-custom relative grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="lg:col-span-6 text-center lg:text-left">
           <FadeIn>
-            <SectionLabel className="text-[var(--accent-light)]">
+            <SectionLabel className="text-[var(--accent-light)] justify-center lg:justify-start">
               <span className="!bg-[var(--accent-light)]" />
               Para sua clínica
             </SectionLabel>
@@ -39,14 +39,14 @@ export function B2BSection() {
             </SectionTitle>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="mt-6 text-white/80 text-lg leading-relaxed">
+            <p className="mt-6 text-white/80 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
               Ofereça procedimentos ambulatoriais com sedação endovenosa segura, eleve a experiência
               do paciente e aumente o ticket médio da sua clínica com uma anestesista dedicada.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <Link href="/parceria" className="btn-accent mt-10 inline-flex">
+            <Link href="/parceria" className="btn-accent mt-8 md:mt-10 inline-flex">
               Conhecer a parceria
               <ArrowRight className="w-4 h-4" />
             </Link>

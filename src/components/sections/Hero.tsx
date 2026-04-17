@@ -10,20 +10,21 @@ export function Hero() {
   const whatsappHref = `https://wa.me/${SITE.whatsapp}`;
 
   return (
-    <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden bg-[var(--bg)]">
+    <section className="relative min-h-screen flex items-center pt-28 pb-16 md:pb-20 overflow-hidden bg-[var(--bg)]">
       {/* Background decorativo — blobs orgânicos sutis */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="absolute top-20 -left-32 w-[600px] h-[600px] rounded-full bg-[var(--bg-soft)] blur-3xl opacity-60" />
-        <div className="absolute -bottom-32 right-10 w-[500px] h-[500px] rounded-full bg-[var(--sage)]/10 blur-3xl" />
+        <div className="absolute top-20 -left-32 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full bg-[var(--bg-soft)] blur-3xl opacity-60" />
+        <div className="absolute -bottom-32 right-10 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-[var(--sage)]/10 blur-3xl" />
       </div>
 
-      <div className="container-custom grid lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-7">
+      <div className="container-custom grid lg:grid-cols-12 gap-10 md:gap-12 items-center w-full">
+        {/* Texto */}
+        <div className="lg:col-span-7 text-center lg:text-left order-2 lg:order-1">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="section-label flex items-center gap-3"
+            className="section-label inline-flex items-center gap-3"
           >
             <span className="h-px w-8 bg-[var(--accent)]" />
             Anestesiologia • Medicina da Dor
@@ -33,7 +34,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 font-display text-[clamp(2.75rem,5.5vw,5rem)] leading-[1.05] text-[var(--primary)]"
+            className="mt-6 font-display text-[clamp(2.25rem,5.5vw,5rem)] leading-[1.1] text-[var(--primary)]"
           >
             Anestesia que <span className="italic text-[var(--accent-dark)]">acolhe</span>,
             <br />
@@ -44,7 +45,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8 text-[var(--text-muted)] text-[clamp(1.05rem,1.5vw,1.25rem)] font-body max-w-xl leading-relaxed"
+            className="mt-6 md:mt-8 text-[var(--text-muted)] text-base md:text-lg lg:text-xl font-body max-w-xl mx-auto lg:mx-0 leading-relaxed"
           >
             Anestesia ambulatorial para clínicas de dermatologia, odontologia, cirurgia plástica e estética, com a tranquilidade que seu paciente merece.
           </motion.p>
@@ -53,7 +54,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-8 md:mt-10 flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start"
           >
             <Link href="/parceria" className="btn-primary">
               <Building2 className="w-5 h-5" />
@@ -70,7 +71,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="mt-12 flex items-center gap-6 text-sm text-[var(--text-muted)]"
+            className="mt-10 md:mt-12 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm text-[var(--text-muted)] justify-center lg:justify-start"
           >
             <div className="flex -space-x-2">
               {[1, 2, 3].map((i) => (
@@ -80,53 +81,54 @@ export function Hero() {
                 />
               ))}
             </div>
-            <span>+20 clínicas parceiras confiam neste atendimento</span>
+            <span className="text-center sm:text-left">+20 clínicas parceiras confiam neste atendimento</span>
           </motion.div>
         </div>
 
+        {/* Foto */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-5 relative hidden lg:block"
+          transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:col-span-5 relative order-1 lg:order-2 mx-auto w-full max-w-[340px] sm:max-w-[380px] lg:max-w-none"
         >
           {/* Moldura sutil atrás da foto */}
-          <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--sage)]/20 to-[var(--accent-light)]/20 -z-10" />
+          <div className="absolute -inset-3 md:-inset-4 rounded-[2rem] md:rounded-[2.5rem] bg-gradient-to-br from-[var(--sage)]/20 to-[var(--accent-light)]/20 -z-10" />
 
-          <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
+          <div className="relative aspect-[3/4] rounded-[1.75rem] md:rounded-[2rem] overflow-hidden shadow-2xl">
             <Image
               src="/images/hero/carla-hero.jpg"
               alt="Dra. Carla Costa, Anestesiologista"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 40vw"
               className="object-cover object-top"
             />
-            {/* Overlay suave para harmonizar com a paleta */}
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/20 via-transparent to-transparent" />
           </div>
 
+          {/* Cards flutuantes — escondidos em telas muito pequenas */}
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-6 -left-6 bg-[var(--bg-cream)] rounded-2xl p-5 shadow-xl border border-[var(--border)] max-w-[220px]"
+            className="absolute -bottom-4 -left-2 md:-bottom-6 md:-left-6 bg-[var(--bg-cream)] rounded-2xl p-3 md:p-5 shadow-xl border border-[var(--border)] max-w-[160px] md:max-w-[220px]"
           >
-            <p className="font-display text-3xl text-[var(--primary)] italic">+8 anos</p>
-            <p className="text-sm text-[var(--text-muted)] mt-1">de experiência em anestesiologia</p>
+            <p className="font-display text-2xl md:text-3xl text-[var(--primary)] italic leading-none">+8 anos</p>
+            <p className="text-[11px] md:text-sm text-[var(--text-muted)] mt-1 leading-tight">de experiência em anestesiologia</p>
           </motion.div>
 
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-            className="absolute -top-4 -right-4 bg-[var(--primary)] text-[var(--bg-cream)] rounded-2xl p-5 shadow-xl max-w-[200px]"
+            className="absolute -top-3 -right-2 md:-top-4 md:-right-4 bg-[var(--primary)] text-[var(--bg-cream)] rounded-2xl p-3 md:p-5 shadow-xl max-w-[140px] md:max-w-[200px]"
           >
-            <p className="font-display text-xl italic">Santa Casa SP</p>
-            <p className="text-xs opacity-80 mt-1 tracking-wide uppercase">Medicina da Dor</p>
+            <p className="font-display text-base md:text-xl italic leading-tight">Santa Casa SP</p>
+            <p className="text-[10px] md:text-xs opacity-80 mt-1 tracking-wide uppercase">Medicina da Dor</p>
           </motion.div>
 
-          {/* Elemento decorativo — estrela do brand */}
+          {/* Estrela do brand */}
           <svg
-            className="absolute -top-10 left-1/2 -translate-x-1/2 w-10 h-10 text-[var(--primary)] opacity-40"
+            className="absolute -top-8 md:-top-10 left-1/2 -translate-x-1/2 w-8 h-8 md:w-10 md:h-10 text-[var(--primary)] opacity-40"
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden
@@ -136,12 +138,12 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — só em desktop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--text-muted)] text-xs tracking-[0.3em] uppercase"
+        className="hidden lg:block absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--text-muted)] text-xs tracking-[0.3em] uppercase"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

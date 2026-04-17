@@ -38,10 +38,10 @@ export function ContactSection() {
 
   return (
     <section id="contato" className="section bg-[var(--bg-soft)]">
-      <div className="container-custom grid lg:grid-cols-12 gap-16">
-        <div className="lg:col-span-5">
+      <div className="container-custom grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <div className="lg:col-span-5 text-center lg:text-left">
           <FadeIn>
-            <SectionLabel>Contato</SectionLabel>
+            <SectionLabel className="justify-center lg:justify-start">Contato</SectionLabel>
           </FadeIn>
           <FadeIn delay={0.1}>
             <SectionTitle className="mt-4">

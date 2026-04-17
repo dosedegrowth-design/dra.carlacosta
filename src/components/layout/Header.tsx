@@ -50,12 +50,7 @@ export function Header() {
               )}
               priority
             />
-            <span
-              className={cn(
-                "font-display text-lg md:text-xl tracking-tight transition-colors hidden sm:block",
-                "text-[var(--primary)]"
-              )}
-            >
+            <span className="font-display text-base sm:text-lg md:text-xl tracking-tight text-[var(--primary)]">
               Dra. Carla Costa
             </span>
           </Link>

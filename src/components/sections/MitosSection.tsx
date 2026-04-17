@@ -7,10 +7,10 @@ import { AccordionItem } from "@/components/ui/Accordion";
 export function MitosSection() {
   return (
     <section className="section bg-[var(--bg-soft)]">
-      <div className="container-custom grid lg:grid-cols-12 gap-16">
-        <div className="lg:col-span-5">
+      <div className="container-custom grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <div className="lg:col-span-5 text-center lg:text-left">
           <FadeIn>
-            <SectionLabel>Mitos e Verdades</SectionLabel>
+            <SectionLabel className="justify-center lg:justify-start">Mitos e Verdades</SectionLabel>
           </FadeIn>
           <FadeIn delay={0.1}>
             <SectionTitle className="mt-4">
@@ -19,7 +19,7 @@ export function MitosSection() {
             </SectionTitle>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="mt-6 text-[var(--text-muted)] text-lg leading-relaxed">
+            <p className="mt-6 text-[var(--text-muted)] text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
               Desmistificamos as dúvidas mais comuns para que você, paciente ou profissional, tome
               decisões seguras e informadas.
             </p>
