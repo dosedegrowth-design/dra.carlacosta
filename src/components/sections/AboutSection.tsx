@@ -12,20 +12,23 @@ export function AboutSection() {
     <section id="sobre" className="section bg-[var(--bg)]">
       <div className="container-custom grid lg:grid-cols-12 gap-16 items-start">
         <FadeIn direction="right" className="lg:col-span-5 relative">
-          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+          {/* Moldura decorativa sutil */}
+          <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[var(--sage)]/15 to-[var(--accent-light)]/30 -z-10" />
+
+          <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=1200&q=80"
-              alt="Dra. Carla Costa atendendo"
+              src="/images/about/carla-sobre.jpg"
+              alt="Dra. Carla Costa"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />
           </div>
-          <div className="absolute -bottom-8 -right-8 bg-[var(--primary)] text-white rounded-2xl p-6 max-w-[260px] hidden md:block">
-            <p className="font-display text-lg leading-tight">
+          <div className="absolute -bottom-8 -right-8 bg-[var(--primary)] text-[var(--bg-cream)] rounded-2xl p-6 max-w-[260px] hidden md:block shadow-xl">
+            <p className="font-display text-lg leading-tight italic">
               &ldquo;Cada paciente merece ser tratado com a mesma dedicação de um familiar.&rdquo;
             </p>
-            <p className="mt-3 text-xs text-[var(--accent-light)] uppercase tracking-[0.2em]">
+            <p className="mt-3 text-xs text-[var(--accent-light)] uppercase tracking-[0.25em]">
               Dra. Carla Costa
             </p>
           </div>

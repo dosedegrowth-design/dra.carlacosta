@@ -11,18 +11,11 @@ export function Hero() {
   const whatsappHref = `https://wa.me/${SITE.whatsapp}`;
 
   return (
-    <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden">
-      {/* Background image with parallax */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=2000&q=80"
-          alt="Ambiente clínico moderno"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--bg)]/95 via-[var(--bg)]/90 to-[var(--bg)]/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-transparent" />
+    <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden bg-[var(--bg)]">
+      {/* Background decorativo — blobs orgânicos sutis */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute top-20 -left-32 w-[600px] h-[600px] rounded-full bg-[var(--bg-soft)] blur-3xl opacity-60" />
+        <div className="absolute -bottom-32 right-10 w-[500px] h-[500px] rounded-full bg-[var(--sage)]/10 blur-3xl" />
       </div>
 
       <div className="container-custom grid lg:grid-cols-12 gap-12 items-center">
@@ -83,39 +76,54 @@ export function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-5 relative hidden lg:block"
         >
-          <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden">
+          {/* Moldura sutil atrás da foto */}
+          <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--sage)]/20 to-[var(--accent-light)]/20 -z-10" />
+
+          <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=1200&q=80"
-              alt="Dra. Carla Costa"
+              src="/images/hero/carla-hero.jpg"
+              alt="Dra. Carla Costa — Anestesiologista"
               fill
               priority
-              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover object-top"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/40 to-transparent" />
+            {/* Overlay suave para harmonizar com a paleta */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/20 via-transparent to-transparent" />
           </div>
 
           <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-5 shadow-2xl border border-[var(--border)] max-w-[220px]"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-6 -left-6 bg-[var(--bg-cream)] rounded-2xl p-5 shadow-xl border border-[var(--border)] max-w-[220px]"
           >
-            <p className="font-display text-3xl text-[var(--primary)]">+8 anos</p>
+            <p className="font-display text-3xl text-[var(--primary)] italic">+8 anos</p>
             <p className="text-sm text-[var(--text-muted)] mt-1">de experiência em anestesiologia</p>
           </motion.div>
 
           <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute -top-6 -right-6 bg-[var(--accent-dark)] text-white rounded-2xl p-5 shadow-2xl max-w-[200px]"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+            className="absolute -top-4 -right-4 bg-[var(--primary)] text-[var(--bg-cream)] rounded-2xl p-5 shadow-xl max-w-[200px]"
           >
-            <p className="font-display text-2xl">Santa Casa SP</p>
-            <p className="text-sm opacity-90 mt-1">Especialização em Medicina da Dor</p>
+            <p className="font-display text-xl italic">Santa Casa SP</p>
+            <p className="text-xs opacity-80 mt-1 tracking-wide uppercase">Medicina da Dor</p>
           </motion.div>
+
+          {/* Elemento decorativo — estrela do brand */}
+          <svg
+            className="absolute -top-10 left-1/2 -translate-x-1/2 w-10 h-10 text-[var(--primary)] opacity-40"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden
+          >
+            <path d="M12 0 L13 10 L24 12 L13 14 L12 24 L11 14 L0 12 L11 10 Z" />
+          </svg>
         </motion.div>
       </div>
 
