@@ -8,7 +8,8 @@ export interface Service {
 }
 
 export interface Pilar {
-  icon: string;
+  icon?: string;
+  image?: string;
   title: string;
   description: string;
 }

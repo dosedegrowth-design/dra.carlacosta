@@ -53,11 +53,15 @@ export function AboutSection() {
 
           <div className="mt-10 grid sm:grid-cols-2 gap-6">
             {PILARES.map((p, idx) => {
-              const Icon = Icons[p.icon as IconName] as React.ComponentType<{ className?: string; strokeWidth?: number }>;
+              const Icon = p.icon ? (Icons[p.icon as IconName] as React.ComponentType<{ className?: string; strokeWidth?: number }>) : null;
               return (
                 <FadeIn key={p.title} delay={0.1 * idx} className="flex gap-4">
-                  <span className="flex-shrink-0 w-12 h-12 grid place-items-center rounded-xl bg-[var(--bg-soft)] text-[var(--accent-dark)]">
-                    {Icon ? <Icon className="w-6 h-6" strokeWidth={1.5} /> : null}
+                  <span className="flex-shrink-0 w-14 h-14 grid place-items-center rounded-xl bg-[var(--bg-soft)] text-[var(--accent-dark)] p-2">
+                    {p.image ? (
+                      <Image src={p.image} alt={p.title} width={40} height={40} className="w-10 h-10 object-contain" />
+                    ) : Icon ? (
+                      <Icon className="w-6 h-6" strokeWidth={1.5} />
+                    ) : null}
                   </span>
                   <div>
                     <h3 className="font-display text-xl text-[var(--primary)]">{p.title}</h3>

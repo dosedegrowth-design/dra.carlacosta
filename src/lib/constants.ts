@@ -37,25 +37,25 @@ export const MARQUEE_ITEMS = [
 
 export const PILARES: Pilar[] = [
   {
-    icon: "ShieldCheck",
+    image: "/images/icons/pilar-seguranca.png",
     title: "Segurança",
     description:
       "Monitorização contínua e protocolos anestésicos rigorosos para cada procedimento.",
   },
   {
-    icon: "Heart",
+    image: "/images/icons/pilar-acolhimento.png",
     title: "Acolhimento",
     description:
       "Escuta ativa e tranquilização do paciente antes, durante e após o procedimento.",
   },
   {
-    icon: "Sparkles",
+    image: "/images/icons/pilar-conforto.png",
     title: "Conforto",
     description:
       "Experiência suave e amparo completo, com técnicas adaptadas para cada caso.",
   },
   {
-    icon: "UserCheck",
+    image: "/images/icons/pilar-humanizacao.png",
     title: "Humanização",
     description:
       "Abordagem individualizada que respeita a história e as necessidades do paciente.",
@@ -79,7 +79,7 @@ export const SERVICES: Service[] = [
     description:
       "Sedação consciente e anestesia para procedimentos odontológicos que demandam mais do que o bloqueio local, oferecendo segurança e conforto ao paciente ansioso.",
     icon: "Stethoscope",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80",
+    image: "/images/services/servico-odontologia.jpg",
   },
   {
     slug: "centro-cirurgico",
@@ -97,7 +97,7 @@ export const SERVICES: Service[] = [
     description:
       "Técnica que mantém o paciente relaxado e cooperativo, sem perda completa da consciência — ideal para procedimentos ambulatoriais de menor porte.",
     icon: "Moon",
-    image: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=1200&q=80",
+    image: "/images/services/servico-sedacao.jpg",
   },
   {
     slug: "medicina-da-dor",
@@ -106,7 +106,7 @@ export const SERVICES: Service[] = [
     description:
       "Tratamento multidisciplinar da dor, com plano individualizado para cada paciente e integração com as demais especialidades médicas.",
     icon: "HeartPulse",
-    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1200&q=80",
+    image: "/images/services/servico-medicina-dor.jpg",
   },
   {
     slug: "avaliacao-pre-anestesica",
@@ -115,7 +115,7 @@ export const SERVICES: Service[] = [
     description:
       "Anamnese detalhada, análise de exames e planejamento anestésico personalizado — reduzindo riscos e complicações intra e pós-operatórias.",
     icon: "ClipboardCheck",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80",
+    image: "/images/services/servico-pre-anestesica.jpg",
   },
 ];
 

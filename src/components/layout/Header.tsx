@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
@@ -37,11 +38,22 @@ export function Header() {
         )}
       >
         <div className="container-custom flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image
+              src="/images/logo/logo-carla.png"
+              alt="Dra. Carla Costa"
+              width={48}
+              height={48}
+              className={cn(
+                "transition-all duration-500",
+                scrolled ? "w-10 h-10" : "w-12 h-12"
+              )}
+              priority
+            />
             <span
               className={cn(
-                "font-display text-xl md:text-2xl tracking-tight transition-colors",
-                scrolled ? "text-[var(--primary)]" : "text-[var(--primary)]"
+                "font-display text-lg md:text-xl tracking-tight transition-colors hidden sm:block",
+                "text-[var(--primary)]"
               )}
             >
               Dra. Carla Costa

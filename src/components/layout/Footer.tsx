@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { SITE, NAV_LINKS } from "@/lib/constants";
 
@@ -30,7 +31,18 @@ export function Footer() {
       <div className="container-custom py-16 md:py-24">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <h3 className="font-display text-3xl mb-4">{SITE.name}</h3>
+            <div className="flex items-center gap-4 mb-4">
+              <span className="grid place-items-center w-16 h-16 rounded-full bg-white p-1">
+                <Image
+                  src="/images/logo/logo-carla.png"
+                  alt="Dra. Carla Costa"
+                  width={56}
+                  height={56}
+                  className="w-14 h-14 object-contain"
+                />
+              </span>
+              <h3 className="font-display text-3xl">{SITE.name}</h3>
+            </div>
             <p className="text-white/70 max-w-md leading-relaxed">
               Anestesiologia e Medicina da Dor com cuidado, segurança e humanização — para clínicas
               parceiras e pacientes.
