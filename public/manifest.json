@@ -1,0 +1,27 @@
+{
+  "name": "Dra. Carla Costa — Anestesiologia Ambulatorial",
+  "short_name": "Dra. Carla Costa",
+  "description": "Anestesiologia e Medicina da Dor com foco em clínicas dermatológicas, odontológicas, plásticas e estéticas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f1e8",
+  "theme_color": "#3d4a3a",
+  "orientation": "portrait",
+  "lang": "pt-BR",
+  "scope": "/",
+  "categories": ["medical", "health", "business"],
+  "icons": [
+    {
+      "src": "/images/logo/logo-carla.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/logo/logo-carla.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

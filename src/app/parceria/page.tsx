@@ -11,6 +11,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { B2B_BENEFITS, HOW_IT_WORKS, SITE, STATS, TESTIMONIALS } from "@/lib/constants";
+import { getBreadcrumbSchema } from "@/lib/structured-data";
 
 type IconName = keyof typeof Icons;
 
@@ -18,10 +19,31 @@ export const metadata: Metadata = {
   title: "Parceria com Clínicas | Anestesiologia Ambulatorial",
   description:
     "Anestesiologista parceira para clínicas de dermatologia, odontologia, cirurgia plástica e estética. Sedação segura, previsibilidade clínica e pacientes mais satisfeitos.",
+  alternates: { canonical: "/parceria" },
+  openGraph: {
+    type: "website",
+    url: `${SITE.url}/parceria`,
+    title: "Parceria com Clínicas | Anestesiologia Ambulatorial",
+    description:
+      "Anestesiologista parceira para clínicas de dermatologia, odontologia, cirurgia plástica e estética.",
+    images: [
+      {
+        url: SITE.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Parceria com Clínicas — Dra. Carla Costa",
+      },
+    ],
+  },
 };
 
 export default function ParceriaPage() {
   const whatsappHref = `https://wa.me/${SITE.whatsapp}`;
+
+  const breadcrumb = getBreadcrumbSchema([
+    { name: "Início", url: SITE.url },
+    { name: "Parceria com Clínicas", url: `${SITE.url}/parceria` },
+  ]);
 
   const reasons = [
     "Avaliação pré-anestésica completa de cada paciente",
@@ -34,6 +56,10 @@ export default function ParceriaPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <main>
         {/* Hero */}

@@ -5,26 +5,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url.replace(/\/$/, "");
   const now = new Date();
 
-  const staticPages = [
-    { url: `${base}/`, priority: 1.0 },
-    { url: `${base}/parceria`, priority: 0.9 },
-    { url: `${base}/blog`, priority: 0.7 },
+  const staticPages: MetadataRoute.Sitemap = [
+    {
+      url: `${base}/`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1.0,
+    },
+    {
+      url: `${base}/parceria`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
   ];
 
-  const services = SERVICES.map((s) => ({
+  const services: MetadataRoute.Sitemap = SERVICES.map((s) => ({
     url: `${base}/servicos/${s.slug}`,
-    priority: 0.7,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
   }));
 
-  const posts = BLOG_POSTS.map((p) => ({
+  const posts: MetadataRoute.Sitemap = BLOG_POSTS.map((p) => ({
     url: `${base}/blog/${p.slug}`,
-    priority: 0.6,
     lastModified: new Date(p.date),
+    changeFrequency: "monthly",
+    priority: 0.6,
   }));
 
-  return [
-    ...staticPages.map((p) => ({ ...p, lastModified: now })),
-    ...services.map((p) => ({ ...p, lastModified: now })),
-    ...posts,
-  ];
+  return [...staticPages, ...services, ...posts];
 }

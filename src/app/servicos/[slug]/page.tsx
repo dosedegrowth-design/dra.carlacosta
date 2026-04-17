@@ -10,6 +10,7 @@ import { FadeIn } from "@/components/animation/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { CTASection } from "@/components/sections/CTASection";
 import { SERVICES, SITE } from "@/lib/constants";
+import { getServiceSchema, getBreadcrumbSchema } from "@/lib/structured-data";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -21,13 +22,26 @@ export async function generateMetadata(
   const { slug } = await params;
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return {};
+  const canonicalUrl = `/servicos/${service.slug}`;
+  const fullImage = service.image.startsWith("http")
+    ? service.image
+    : `${SITE.url}${service.image}`;
   return {
     title: service.title,
     description: service.short,
+    alternates: { canonical: canonicalUrl },
     openGraph: {
+      type: "article",
+      url: `${SITE.url}${canonicalUrl}`,
+      title: `${service.title} | ${SITE.name}`,
+      description: service.short,
+      images: [{ url: fullImage, width: 1200, height: 900, alt: service.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
       title: service.title,
       description: service.short,
-      images: [service.image],
+      images: [fullImage],
     },
   };
 }
@@ -42,6 +56,13 @@ export default async function ServicePage(
   const whatsappHref = `https://wa.me/${SITE.whatsapp}`;
   const others = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 3);
 
+  const serviceSchema = getServiceSchema(service.slug);
+  const breadcrumb = getBreadcrumbSchema([
+    { name: "Início", url: SITE.url },
+    { name: "Áreas de Atuação", url: `${SITE.url}/#servicos` },
+    { name: service.title, url: `${SITE.url}/servicos/${service.slug}` },
+  ]);
+
   const highlights = [
     "Avaliação pré-procedimento completa",
     "Monitorização contínua de sinais vitais",
@@ -51,6 +72,16 @@ export default async function ServicePage(
 
   return (
     <>
+      {serviceSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <main>
         <section className="relative pt-32 pb-20 overflow-hidden">

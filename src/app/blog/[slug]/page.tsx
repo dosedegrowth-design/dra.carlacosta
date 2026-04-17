@@ -8,7 +8,8 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 import { FadeIn } from "@/components/animation/FadeIn";
 import { CTASection } from "@/components/sections/CTASection";
-import { BLOG_POSTS } from "@/lib/constants";
+import { BLOG_POSTS, SITE } from "@/lib/constants";
+import { getBlogPostingSchema, getBreadcrumbSchema } from "@/lib/structured-data";
 
 export function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({ slug: p.slug }));
@@ -20,14 +21,28 @@ export async function generateMetadata(
   const { slug } = await params;
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) return {};
+  const canonicalUrl = `/blog/${post.slug}`;
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: canonicalUrl },
+    keywords: [post.category, "anestesia", "anestesiologia", "saúde"],
     openGraph: {
+      type: "article",
+      url: `${SITE.url}${canonicalUrl}`,
+      title: post.title,
+      description: post.excerpt,
+      images: [{ url: post.image, width: 1200, height: 750, alt: post.title }],
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      authors: [SITE.name],
+      section: post.category,
+    },
+    twitter: {
+      card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
       images: [post.image],
-      type: "article",
     },
   };
 }
@@ -47,8 +62,25 @@ export default async function BlogPostPage(
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) notFound();
 
+  const postSchema = getBlogPostingSchema(post.slug);
+  const breadcrumb = getBreadcrumbSchema([
+    { name: "Início", url: SITE.url },
+    { name: "Blog", url: `${SITE.url}/blog` },
+    { name: post.title, url: `${SITE.url}/blog/${post.slug}` },
+  ]);
+
   return (
     <>
+      {postSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(postSchema) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <main>
         <article>

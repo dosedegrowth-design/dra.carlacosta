@@ -15,27 +15,32 @@ import { CTASection } from "@/components/sections/CTASection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import {
   getPhysicianSchema,
+  getLocalBusinessSchema,
   getWebsiteSchema,
+  getOrganizationSchema,
   getFAQSchema,
 } from "@/lib/structured-data";
 
 export default function Home() {
+  const schemas = [
+    getPhysicianSchema(),
+    getLocalBusinessSchema(),
+    getOrganizationSchema(),
+    getWebsiteSchema(),
+    getFAQSchema(),
+  ];
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getPhysicianSchema()) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebsiteSchema()) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getFAQSchema()) }}
-      />
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <MarqueeTicker />
         <AboutSection />

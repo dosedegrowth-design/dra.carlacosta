@@ -8,12 +8,21 @@ import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 import { FadeIn } from "@/components/animation/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { BLOG_POSTS } from "@/lib/constants";
+import { BLOG_POSTS, SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Blog | Conteúdo sobre Anestesia",
   description:
     "Artigos e conteúdos sobre anestesia ambulatorial, sedação consciente e medicina da dor para clínicas e pacientes.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    type: "website",
+    url: `${SITE.url}/blog`,
+    title: "Blog | Conteúdo sobre Anestesia",
+    description:
+      "Artigos e conteúdos sobre anestesia ambulatorial, sedação consciente e medicina da dor.",
+    images: [{ url: SITE.ogImage, width: 1200, height: 630, alt: "Blog Dra. Carla Costa" }],
+  },
 };
 
 function formatDate(iso: string) {
